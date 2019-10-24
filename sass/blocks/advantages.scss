@@ -1,0 +1,110 @@
+$subtitleColor: #636363;
+$iconColor: #636363;
+$textColor: #555555;
+$borderColor: #363636;
+
+.advantages__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, auto));
+  grid-column-gap: 30px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  list-style: none;
+}
+
+.advantages__item {
+  position: relative;
+  padding-bottom: 30px;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      display: block;
+      width: 70px;
+      height: 2px;
+      background-color: $second;
+    }
+
+    &:hover,
+    &:focus {
+      .advantages__image {
+        border-color: $second;
+      }
+
+      .advantages__svg {
+        fill: $second;
+      }
+
+      .advantages__subtitle {
+        color: $second;
+      }
+
+      .advantages__text {
+        color: $white;
+      }
+    }
+}
+
+.advantages__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 30px;
+  border-radius: 50%;
+  border: 1px solid $borderColor;
+  transition-duration: 500ms;
+  transition-property: border-color;
+}
+
+.advantages__svg {
+  fill: $iconColor;
+  transition-duration: 500ms;
+  transition-property: fill;
+}
+
+.advantages__subtitle {
+  margin: 0;
+  margin-bottom: 15px;
+  font-family: $font-second;
+  font-size: 18px;
+  line-height: 1.111;
+  color: $subtitleColor;
+  font-weight: 800;
+  text-transform: uppercase;
+  transition-duration: 500ms;
+  transition-property: color;
+}
+
+.advantages__text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.429;
+  font-weight: 400;
+  color: $textColor;
+  transition-duration: 500ms;
+  transition-property: color
+}
+
+@media (max-width: 480px) {
+  .advantages__list {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .advantages__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+  }
+
+  .advantages__text {
+    text-align: center;
+  }
+}
